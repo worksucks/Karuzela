@@ -1,0 +1,26 @@
+body {
+  position: relative;
+}
+
+.main-carousel {
+  width:100%;
+  max-height:50%;
+  min-height: 250px;
+}
+
+.carousel-cell {
+
+  background-size: cover;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.button-first (
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  top: 0;
+  right: 500px;
+)
