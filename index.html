@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pl-PL">
     <head>
         <title>Karuzela</title>
@@ -10,30 +9,42 @@
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
 
     </head>
     <body>
-            <div class="main-carousel">
-                <div class="carousel-cell">
-                  <div class="container" style="background-image:  url(http://i.imgur.com/AGEgF5B.jpg); height: 800px; width: 800px; background-size: 100%; background-repeat: no-repeat;"></div>
+
+       <p>
+           <a href="#carousel-cell1">Image 1</a>,
+           <a href="#carousel-cell2">Image 2</a>,
+           <a href="#carousel-cell3">Image 3</a>,
+           <a href="#carousel-cell4">Image 4</a>,
+           <a href="#carousel-cell5">Image 5</a>
+      </p>
+
+            <div class="main-carousel" data-flickity='{ "hash": true }' data-flickity='{ "wrapAround": true }'>
+                <div class="carousel-cell" id="carousel-cell1">
+                  <div class="container" style="background-image:  url('https://via.placeholder.com/200x100/ffaaaa/000000?text=basketball'); height: 400px; width: 400px; background-size: 100%; background-repeat: no-repeat;"> Slajd 1</div>
                 </div>
-                <div class="carousel-cell">
-                  <div class="container"style="background-image:  url(http://i.imgur.com/7Ff7rDB.jpg); height: 800px; width:800px; background-size: 100%; background-repeat: no-repeat;"></div>
+                <div class="carousel-cell" id="carousel-cell2">
+                  <div class="container" style="background-image:  url('http://i.imgur.com/7Ff7rDB.jpg'); height: 400px; width:400px; background-size: 100%; background-repeat: no-repeat;">Slajd 2 </div>
                 </div>
-                <div class="carousel-cell">
-                  <div class="container"style="background-image:  url(http://i.imgur.com/KUt6tGb.jpg); height: 800px; width:800px; object-fit: cover; background-size: 100%; background-repeat: no-repeat;"></div>
+                <div class="carousel-cell" id="carousel-cell3">
+                  <div class="container" style="background-image:  url('http://i.imgur.com/KUt6tGb.jpg'); height: 400px; width:400px; object-fit: cover; background-size: 100%; background-repeat: no-repeat;">Slajd 3</div>
                 </div>
-                <div class="carousel-cell">
-                  <div class="container" style="background-image:  url(http://i.imgur.com/Ue2tUMV.jpg); object-fit:cover; height: 800px; width: 800px; background-size: 100%; background-repeat:no-repeat;"></div>
+                <div class="carousel-cell" id="carousel-cell4">
+                  <div class="container" style="background-image:  url('http://i.imgur.com/Ue2tUMV.jpg'); object-fit:cover; height: 400px; width: 400px; background-size: 100%; background-repeat:no-repeat;">Slajd 4</div>
                 </div>
-              <div class="carousel-cell">
-                  <div class="container"style="background-image:  url(http://kodilla.com/static/lessons/blue-mountain.jpg);object-fit:cover; height: 800px; width: 800px; background-size: 150%; background-repeat: no-repeat;"></div>
+              <div class="carousel-cell" id="carousel-cell5">
+                  <div class="container"style="background-image:  url('https://kodilla.com/static/lessons/blue-mountain.jpg');object-fit:cover; height: 800px; width: 800px; background-size: 150%; background-repeat: no-repeat;">Slajd 5</div>
                 </div>
-            </div>
-        <button class="button_first" id="firstSlide">BUTTON</button>
+
+            </div><br><br>
+        <div class="progress-bar"></div>
+        <button class="button_first" id="firstSlide">RESTART</button>
+
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-        <script src"js/script.js"></script>
+      <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
