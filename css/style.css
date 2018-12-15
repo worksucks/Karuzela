@@ -1,15 +1,24 @@
+* { box-sizing: border-box; }
+
 body {
   position: relative;
 }
 
 .main-carousel {
-  width:100%;
+  position: relative;
+  margin: 0 auto;
+  width:800px;
   max-height:50%;
   min-height: 250px;
 }
 
 .carousel-cell {
-
+  width: 400px;
+  height: 200px;
+  margin-right: 20px;
+  position: absolute;
+  top: 30px;
+  counter-increment: carousel-cell;
   background-size: cover;
 }
 
@@ -17,10 +26,16 @@ body {
   max-width: 1200px;
 }
 
-.button-first (
+.button_first {
   position: absolute;
   width: 100px;
-  height: 200px;
+  height: 20px;
   top: 0;
-  right: 500px;
-)
+  right: 205px;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
+}
