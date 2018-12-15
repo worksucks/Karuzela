@@ -3,13 +3,20 @@ var flkty = new Flickity( elem, {
   // options
   cellAlign: 'center',
   contain: true,
-  pageDots: false,
-  hash: true
+  pageDots: true,
+  hash: true,
 });
 
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-  // options
-  pageDots: false,
+
+//var flkty = new Flickity( '.main-carousel');
+var button = document.getElementById("firstSlide");
+
+var progressBar = document.querySelector('.progress-bar')
+button.addEventListener('click', function(){
+  flkty.select([0]);
+});
+
+flkty.on( 'scroll', function( progress ) {
+  progress = Math.max( 0, Math.min( 1, progress ) );
+  progressBar.style.width = progress * 100 + '%';
 });
