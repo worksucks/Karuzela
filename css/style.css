@@ -32,10 +32,11 @@ body {
 
 .button_first {
   position: absolute;
+  left:67%;
   width: 100px;
   height: 20px;
   top: 0;
-  right: 500px;
+
 }
 
 .progress-bar {
@@ -47,7 +48,9 @@ body {
 }
 
 #map {
+  margin: 0 auto;
+  margin-top: 80px;
   max-height:50%;
   min-height: 250px;
-  width: 1000px;
+  width: 800px;
 }

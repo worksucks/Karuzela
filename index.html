@@ -11,20 +11,20 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body>
 
+    <body>
         <div class="main-carousel">
         </div>
 
-        <script id="slide-item" type="x-tmpl-mustache">
-        <div class="carousel-cell" id="carousel-cell{{index}}">
-      <div class="container" style="background-image: url( {{image}} );object-fit:cover; height: 400px; width: 400px; background-size: 150%; background-repeat: no-repeat;>
-        <h1> {{title}} </h1>
-        {{{description}}}
-      </div>
-    </div>
-    </script>
 
+    <script id="slide-item" type="x-tmpl-mustache">
+      <div class="carousel-cell" id="carousel-cell{{index}}">
+        <div class="container" style="background-image: url( {{image}} ); height: 400px; width: 400px; background-size: 100%; background-repeat: no-repeat;">
+          <h1> {{title}} </h1>
+          {{{description}}}
+        </div>
+      </div>
+    </script>
 
      <div class="progress-bar"></div>
      <button class="button_first" id="firstSlide">RESTART</button>
@@ -33,44 +33,44 @@
 
   var slaid_object = [
 	{
-		index: 1,
-    image: "http://i.imgur.com/AGEgF5B.jpg",
+		image: "http://i.imgur.com/AGEgF5B.jpg",
 		title: 'Office',
-    description: '<p>Office</p> <img src="http://i.imgur.com/AGEgF5B.jpg"> <p>Office</p>'
+    description: '<p>Office</p> <img src="http://i.imgur.com/AGEgF5B.jpg"> <p>Office</p>',
+    coords: {lat: 50.0645, lng: 19.9453}
 	},
 	{
-		index: 2,
-    image: "http://i.imgur.com/7Ff7rDB.jpg",
+		image: "http://i.imgur.com/7Ff7rDB.jpg",
 		title: 'Office',
-    description: '<p>Office</p> <img src="http://i.imgur.com/7Ff7rDB.jpg"> <p>Office</p>'
+    description: '<p>Office</p> <img src="http://i.imgur.com/7Ff7rDB.jpg"> <p>Office</p>',
+    coords: {lat: 50.0645, lng: 19.5453}
 	},
 	{
-		index: 3,
-    image: "http://i.imgur.com/KUt6tGb.jpg",
+		image: "http://i.imgur.com/KUt6tGb.jpg",
 		title: 'Jars',
-    description: '<p>Office</p> <img src="http://i.imgur.com/KUt6tGb.jpg"> <p>Office</p>'
-
+    description: '<p>Office</p> <img src="http://i.imgur.com/KUt6tGb.jpg"> <p>Office</p>',
+    coords: {lat: 50.0645, lng: 18.0453}
 	},
    {
-		index: 4,
-    image: "http://i.imgur.com/Ue2tUMV.jpg",
+		image: "http://i.imgur.com/Ue2tUMV.jpg",
 		title: 'Coffea',
-    description: '<p>Mountains</p> <img src="http://i.imgur.com/Ue2tUMV.jpg"> <p>Office</p>'
-
+    description: '<p>Office</p> <img src="http://i.imgur.com/Ue2tUMV.jpg"> <p>Office</p>',
+    coords: {lat: 51.0645, lng: 17.6453}
 	},
     {
-		  index: 5,
-      image: "http://kodilla.com/static/lessons/blue-mountain.jpg",
+		image: "http://kodilla.com/static/lessons/blue-mountain.jpg",
 		title: 'Mountains',
-    description: '<p>Office</p> <img src="http://kodilla.com/static/lessons/blue-mountain.jpg"> <p>Office</p>'
+    description: '<p>Office</p> <img src="http://kodilla.com/static/lessons/blue-mountain.jpg"> <p>Office</p>',
+    coords: {lat: 50.0645, lng: 15.5453}
 	}
 ];
       </script>
 
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <div id="map" class="container"></div>
+
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
       <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>
-        <script src="js/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+      <script src="js/script.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>
     </body>
 </html>
