@@ -1,29 +1,6 @@
-var template_img_list = document.getElementById("slide-item").innerHTML;
-var mainCarousel = document.querySelector(".main-carousel");
-
-
-Mustache.parse(template_img_list);
-var data = '';
-for (let i=0; i< slaid_object.length; i++){
-    data += Mustache.render(template_img_list,slaid_object[i]);
-}
-
-mainCarousel.innerHTML = data;
-//console.log(mainCarousel, data);
-
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'center',
-  contain: true,
-  pageDots: true,
-  hash: true
-});
-
-
 
 window.initMap = function () {
- var kociarnia = {lat: 50.0645, lng: 19.9453};
+  var kociarnia = {lat: 50.0645, lng: 19.9453};
   var map = new google.maps.Map(
   document.getElementById('map'), {zoom: 6, center: slaid_object[0].coords });
   for (let i=0; i< slaid_object.length; i++){
@@ -32,40 +9,43 @@ window.initMap = function () {
       flkty.select([i]);
     })
   }
+
+  var template_img_list = document.getElementById("slide-item").innerHTML;
+  var mainCarousel = document.querySelector(".main-carousel");
+
+  Mustache.parse(template_img_list);
+  var data = '';
+  for (let i=0; i< slaid_object.length; i++){
+      data += Mustache.render(template_img_list,slaid_object[i]);
+  }
+
+  mainCarousel.innerHTML = data;
+
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'center',
+    contain: true,
+    pageDots: true,
+    hash: true
+  });
+
+  flkty.on('change', function (index) {
+    smoothPanAndZoom(map, 10, slaid_object[index].coords);
+  });
+
+  var button = document.getElementById("firstSlide");
+  button.addEventListener('click', function(){
+    flkty.select([0]);
+  });
+
+  var progressBar = document.querySelector('.progress-bar')
+  flkty.on( 'scroll', function( progress ) {
+    progress = Math.max( 0, Math.min( 1, progress ) );
+    progressBar.style.width = progress * 100 + '%';
+  });
+
 }
-
-flkty.on('change', function (index) {
-  smoothPanAndZoom(map, 10, slaid_object[index].coords);
-});
-
-//var flkty = new Flickity( '.main-carousel');
-
-var button = document.getElementById("firstSlide");
-button.addEventListener('click', function(){
-  flkty.select([0]);
-});
-
-var progressBar = document.querySelector('.progress-bar')
-flkty.on( 'scroll', function( progress ) {
-  progress = Math.max( 0, Math.min( 1, progress ) );
-  progressBar.style.width = progress * 100 + '%';
-});
-
-
-
-/*
-(function(){
-window.initMap = function() {
-
-		var kociarnia = {lat: 50.0645, lng: 19.9453};
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
-			center: kociarnia	});
-    var marker = new google.maps.Marker({position: kociarnia, map: map});
-}
-})();
-initMap(); */
-
 
 //FUNKCJE
 
